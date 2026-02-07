@@ -585,7 +585,7 @@ function showQR() {
 
   if (!qrGenerated) {
     new QRCode(document.getElementById("qrcode"), {
-      text: "https://github.com/Vidath19/Task-R.git",
+      text: "https://github.com/Vidath19/Task-P.git",
       width: 150,
       height: 150,
     });
