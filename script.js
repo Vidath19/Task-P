@@ -571,5 +571,26 @@ vYesBtn.addEventListener("click", () => {
     }
   }, 500);
 });
+
+// Clear error on input
+document.getElementById("recipientName").addEventListener("input", () => {
+  document.getElementById("errorMsg").classList.remove("show");
+});
+
+let qrGenerated = false;
+
+function showQR() {
+  const qrBox = document.getElementById("qrBox");
+  qrBox.classList.remove("hidden");
+
+  if (!qrGenerated) {
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://github.com/Vidath19/Task-R.git",
+      width: 150,
+      height: 150,
+    });
+    qrGenerated = true;
+  }
+}
 // Initialize quiz buttons
 setupQuizButtons();
