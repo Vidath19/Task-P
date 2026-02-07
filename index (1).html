@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hold Button - Hey Baby</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Initial Screen -->
+    <div class="container" id="initialScreen">
+      <div class="content">
+        <h1 class="title">Hey Baby...</h1>
+        <p class="subtitle">I have a question for you.</p>
+        <p class="instruction">Hold the button to enter.</p>
+
+        <div class="button-wrapper">
+          <button class="hold-button" id="holdButton">
+            <span class="button-fill" id="buttonFill"></span>
+            <span class="button-text">Hold For 3 Seconds ⏳</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Screen 1 -->
+    <div class="container quiz-container" id="quizScreen1">
+      <canvas id="confettiCanvas"></canvas>
+
+      <div class="content">
+        <h1 class="quiz-title">Truth Test 🤭</h1>
+        <p class="quiz-question">Who is the bigger drama queen?</p>
+
+        <div class="options-wrapper">
+          <button
+            class="option-button"
+            data-answer="boy"
+            data-next="quizScreen2"
+          >
+            <span class="option-text">You (Boy)</span>
+            <span class="option-emoji">🤦‍♂️</span>
+          </button>
+
+          <button
+            class="option-button"
+            data-answer="girl"
+            data-next="quizScreen2"
+          >
+            <span class="option-text">Me (Girl)</span>
+            <span class="option-emoji">🤷‍♀️</span>
+          </button>
+
+          <button
+            class="option-button"
+            data-answer="both"
+            data-next="quizScreen2"
+          >
+            <span class="option-text">Both</span>
+            <span class="option-emoji">💥</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Screen 2 -->
+    <div class="container quiz-container" id="quizScreen2">
+      <div class="content">
+        <h1 class="quiz-title">Truth Test 🍕</h1>
+        <p class="quiz-question">What makes me happiest?</p>
+
+        <div class="options-wrapper">
+          <button class="option-button" data-answer="sleep">
+            <span class="option-text">Sleep</span>
+            <span class="option-emoji">🛌</span>
+          </button>
+
+          <button
+            class="option-button"
+            data-answer="seeing-you"
+            data-next="quizScreen3"
+          >
+            <span class="option-text">Being with You</span>
+            <span class="option-emoji">😍</span>
+          </button>
+
+          <button class="option-button" data-answer="money">
+            <span class="option-text">Sports</span>
+            <span class="option-emoji">🏏</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Screen 3 - Final Question -->
+    <div class="container quiz-container" id="quizScreen3">
+      <div class="content">
+        <h1 class="quiz-title">Final Truth 😳</h1>
+        <p class="quiz-question">Can I keep you forever?</p>
+
+        <div class="options-wrapper">
+          <button class="option-button" data-answer="maybe">
+            <span class="option-text">Maybe...</span>
+            <span class="option-emoji">🤝</span>
+          </button>
+
+          <button class="option-button" data-answer="no">
+            <span class="option-text">No</span>
+            <span class="option-emoji">❌</span>
+          </button>
+
+          <button
+            class="option-button"
+            data-answer="yes"
+            data-next="finalScreen"
+          >
+            <span class="option-text">Yes, Please!</span>
+            <span class="option-emoji">💍</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Screen - Game Challenge -->
+    <div class="container final-container" id="finalScreen">
+      <div class="content">
+        <p class="final-message">
+          Maine aapke liye kuch special banaya hai.<br />
+          Kya aap mere saath ek chhota sa game<br />
+          khelenge? 🌹
+        </p>
+
+        <div class="final-buttons">
+          <button class="final-button yes-button" id="yesButton">
+            <span class="final-button-text">Ji Haan! ❤️</span>
+          </button>
+
+          <button class="final-button no-button" id="noButton">
+            <span class="final-button-text">Nahi 🙈</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nahi Popup -->
+    <div class="nahi-popup" id="nahiPopup">
+      <div class="nahi-box">
+        <p class="nahi-text">Plz maan jaiye na 🥺</p>
+
+        <div class="nahi-actions">
+          <button class="nahi-yes" id="popupYes">Ji Haan ❤️</button>
+          <button class="nahi-no" id="popupNo">Nahi 🙈</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Nahi Popup -->
+    <div class="nahi-popup" id="nahiPopup2">
+      <div class="nahi-box">
+        <p class="nahi-text">Aapko pakka pasand aayega! 🌹</p>
+
+        <div class="nahi-actions">
+          <button class="nahi-yes" id="popup2Yes">Ji Haan! ❤️</button>
+          <button class="nahi-no" id="popup2No">Nahi 🙈</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Nahi Popup -->
+    <div class="nahi-popup" id="nahiPopup3">
+      <div class="nahi-box">
+        <p class="nahi-text">Bas ek baar try kijiye? 👉👈</p>
+
+        <div class="nahi-actions">
+          <button class="nahi-yes" id="popup3Yes">Ji Haan! ❤️</button>
+          <button class="nahi-no" id="popup3No">Nahi 🙈</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fourth Nahi Popup -->
+    <div class="nahi-popup" id="nahiPopup4">
+      <div class="nahi-box">
+        <p class="nahi-text">Dil todengi mera? 💔</p>
+
+        <div class="nahi-actions">
+          <button class="nahi-yes" id="popup4Yes">Ji Haan! ❤️</button>
+          <button class="nahi-no" id="popup4No">Nahi 🙈</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Forced Yes Popup -->
+    <div class="nahi-popup" id="nahiPopup5">
+      <div class="nahi-box">
+        <p class="nahi-text">Ab aapko Haan bolna hi padega! ❤️</p>
+
+        <div class="nahi-actions">
+          <button class="nahi-yes" id="popup5Yes">Ji Haan! ❤️</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ring Game -->
+    <div class="container game-container" id="gameScreen">
+      <div class="content">
+        <div class="game-status-bar" id="gameStatus">
+          <span class="status-badge">🔒 Nope! 🙈</span>
+        </div>
+
+        <h1 class="game-title">Find 3 Rings 💍</h1>
+        <p class="game-instruction">Tap the boxes! (Wrong box = 🙈)</p>
+
+        <div class="grid-wrapper">
+          <div class="game-grid" id="gameGrid"></div>
+        </div>
+
+        <p class="found-counter">Found: <span id="foundCount">0</span>/3</p>
+
+        <button
+          class="next-level-button"
+          id="gameNextButton"
+          style="display: none"
+        >
+          Next Step ✨
+        </button>
+      </div>
+    </div>
+
+    <!-- letter  -->
+    <div class="container appreciation-container" id="appreciationScreen">
+      <div class="content">
+        <h1 class="appreciation-title">Why I Love You</h1>
+
+        <div class="reasons-list">
+          <div class="reason-item">
+            <span class="reason-number">1</span>
+            <p class="reason-text">Your smile brightens my day.</p>
+          </div>
+          <div class="reason-item">
+            <span class="reason-number">2</span>
+            <p class="reason-text">You are my biggest supporter.</p>
+          </div>
+          <div class="reason-item">
+            <span class="reason-number">3</span>
+            <p class="reason-text">The way you care for me.</p>
+          </div>
+          <div class="reason-item">
+            <span class="reason-number">4</span>
+            <p class="reason-text">Your eyes speak to my soul.</p>
+          </div>
+          <div class="reason-item">
+            <span class="reason-number">5</span>
+            <p class="reason-text">You are my safe space.</p>
+          </div>
+          <div class="reason-item">
+            <span class="reason-number">6</span>
+            <p class="reason-text">I just love everything about you!</p>
+          </div>
+        </div>
+
+        <button class="last-thing-button" id="lastThingButton">
+          One Last Thing ➜
+        </button>
+      </div>
+    </div>
+
+    <!-- Wax Seal  -->
+    <div class="container envelope-container" id="envelopeScreen">
+      <div class="content">
+        <div class="envelope-wrapper" id="waxSeal">
+          <div class="envelope">
+            <div class="wax-seal">
+              <span class="heart-emoji">❤️</span>
+            </div>
+          </div>
+        </div>
+        <p class="envelope-instruction">Tap the Wax Seal to Open</p>
+      </div>
+    </div>
+
+    <!-- Vakentine  -->
+    <div class="container valentine-card-container" id="valentineScreen">
+      <div class="valentine-card">
+        <h1 class="valentine-title">Will You Be My Valentine?</h1>
+        <p class="valentine-promise">
+          I promise to marry you and love you forever.
+        </p>
+
+        <div class="valentine-actions">
+          <button class="v-yes-btn" id="vYesBtn">YES! ❤️</button>
+          <button class="v-no-btn" id="vNoBtn">No</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Iknew it  -->
+    <div class="container success-container" id="successScreen">
+      <div class="content">
+        <div class="success-card">
+          <div class="heart-box">
+            <div class="inner-heart">
+              <span class="smiley-heart">😘❤️</span>
+            </div>
+          </div>
+          <canvas id="finalConfetti"></canvas>
+        </div>
+
+        <h1 class="success-title">Happy Propose Day My Love 😚❤️</h1>
+        <p class="success-subtitle">
+          We are made for each other,<br />
+          my forever partner ❤️
+        </p>
+
+        <div class="final-emoji">💍✨</div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
